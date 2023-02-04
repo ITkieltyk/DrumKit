@@ -1,0 +1,58 @@
+:root {
+  --lighter: #424242;
+  --darker: #303030;
+}
+
+body {
+  background-color: var(--darker);
+  color: white;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 12px;
+  background-color: var(--lighter);
+  height: 64px;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 24px;
+}
+.appbar {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 160%;
+
+  letter-spacing: 0.15px;
+}
+.appLabel {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 123.5%;
+  letter-spacing: 0.25px;
+}
+.app {
+  display: flex;
+}
+.app button {
+  height: 96px;
+  width: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: var(--lighter);
+  text-transform: uppercase;
+}
