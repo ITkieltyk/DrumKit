@@ -3,7 +3,7 @@ const app = document.getElementById("app");
 const drumKitData = [
   {
     drumPart: "clap",
-    keyboardKey: "W",
+    keyboardKey: "w",
   },
   {
     drumPart: "hihat",
@@ -50,7 +50,11 @@ drumKitData.forEach((element) => {
   app.appendChild(drumButton);
 });
 
-// Attempt to assing keybord keys to play each sound corrensponding to button id
+// Success attempt to assing keybord keys to play each sound corrensponding to button id
 window.addEventListener("keydown", (e) => {
-  app.getElementById(e.key).getElementsByTagName("audio")[0].play();
+  const drumAudio = document
+    .getElementById(e.key)
+    .getElementsByTagName("audio")[0];
+  drumAudio.currentTime = 0;
+  drumAudio.play();
 });

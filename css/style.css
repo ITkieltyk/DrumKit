@@ -24,6 +24,7 @@ body {
   align-items: center;
   padding: 0px;
   gap: 24px;
+  height: calc(100vh - 64px);
 }
 .appbar {
   font-family: "Roboto";
@@ -43,16 +44,51 @@ body {
   letter-spacing: 0.25px;
 }
 .app {
-  display: flex;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
 }
 .app button {
+  grid-row: 2;
   height: 96px;
   width: 96px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 5px;
   background-color: var(--lighter);
   text-transform: uppercase;
+  color: white;
+  font-family: "Roboto";
+  font-style: bold;
+}
+.app button:first-of-type {
+  grid-row: 1;
+}
+
+@media screen and (max-width: 820px) {
+  .app {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin: auto;
+    gap: 5%;
+    margin-bottom: 10px;
+  }
+  .app button {
+    grid-row: auto;
+    grid-column: auto;
+    width: auto;
+    height: auto;
+  }
+  .app button:last-of-type {
+    grid-column: 1 / span 2;
+    width: auto;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .main {
+    height: fit-content;
+    padding: 0 5%;
+  }
 }
