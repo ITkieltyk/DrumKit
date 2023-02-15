@@ -1,6 +1,7 @@
 :root {
   --lighter: #424242;
   --darker: #303030;
+  box-sizing: border-box;
 }
 
 body {
@@ -47,6 +48,7 @@ body {
   display: grid;
   grid-template-rows: 1fr 1fr;
   gap: 10px;
+  position: relative;
 }
 .app button {
   grid-row: 2;
@@ -55,23 +57,42 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  justify-content: space-between;
+  gap: 10px;
   background-color: var(--lighter);
   text-transform: uppercase;
   color: white;
   font-family: "Roboto";
   font-style: bold;
+  box-shadow: 0px 0px 1px 1px grey, 0px 0px 4px 2px black;
+  border-radius: 2px;
 }
+.app button p {
+  padding: 0;
+  margin: 5px;
+}
+.app button:active {
+  background-color: var(--darker);
+}
+
 .app button:first-of-type {
   grid-row: 1;
 }
 
+.historyWrapper {
+  text-transform: uppercase;
+  word-wrap: normal;
+  height: fit-content;
+  width: calc(96px * 8 + 70px);
+  padding: 15px;
+}
+
 @media screen and (max-width: 820px) {
   .app {
-    grid-template-rows: auto;
+    /* grid-template-rows:; */
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    margin: auto;
+    margin: 0 auto;
     gap: 5%;
     margin-bottom: 10px;
   }
@@ -84,11 +105,17 @@ body {
   .app button:last-of-type {
     grid-column: 1 / span 2;
     width: auto;
-    height: auto;
-    margin-bottom: 10px;
+    height: fit-content;
+    margin-bottom: 10%;
   }
   .main {
     height: fit-content;
     padding: 0 5%;
+  }
+  .appLabel {
+    font-size: 20px;
+  }
+  .historyWrapper {
+    width: 90%;
   }
 }
